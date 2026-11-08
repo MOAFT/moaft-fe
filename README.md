@@ -1,32 +1,40 @@
-# React + TypeScript + Vite
+# MOAFT
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> AI로 만든 결과물과 제작 과정을 기록하고, 다시 활용하고 공유하는 아카이빙 서비스
 
-Currently, two official plugins are available:
+MOAFT는 프롬프트, 입력 자료, 작업 단계와 결과물을 하나의 기록으로 정리해 보관하는 서비스입니다. 흩어져 있던 AI 작업 과정을 한곳에서 검색하고 재사용하거나 다른 사람과 공유할 수 있도록 돕습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**현재 MVP를 개발하고 있습니다.**
 
-## React Compiler
+## ✨ 주요 기능
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **제작 과정 기록**  
+  사용한 도구, 프롬프트, 입력 자료, 작업 단계와 최종 결과물을 하나의 기록으로 저장합니다.
 
-## Expanding the Oxlint configuration
+- **AI 기반 기록 정리**  
+  AI 대화나 직접 작성한 내용을 바탕으로 프롬프트와 제작 단계를 정리하고, 사용자가 확인하고 수정할 수 있습니다.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- **기록 검색과 재사용**  
+  저장한 기록을 찾아 이전 작업의 프롬프트와 제작 과정을 다시 활용할 수 있습니다.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+- **공개 링크 공유**  
+  공개한 기록을 링크로 공유할 수 있습니다. 비회원도 공개 기록을 확인하고 프롬프트를 복사할 수 있습니다.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- **북마크와 독립 복제**  
+  로그인 후 다른 사람의 기록을 북마크할 수 있습니다. 복제가 허용된 기록은 별도의 독립된 기록으로 만들 수 있습니다.
+
+> 새 기록은 비공개, 복제는 비허용으로 설정됩니다.
+
+## 🛠 기술 스택
+
+- React
+- Vite
+- TypeScript
+
+## 🚀 로컬에서 실행하기
+
+```bash
+git clone https://github.com/MOAFT/moaft-fe.git
+cd moaft-fe
+npm ci
+npm run dev
