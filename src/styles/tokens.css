@@ -1,0 +1,197 @@
+@theme {
+  /* Common */
+  --color-common-black: #000000;
+  --color-common-white: #FFFFFF;
+
+  /* Purple */
+  --color-purple-50: #F0EDFC;
+  --color-purple-100: #CFC8F7;
+  --color-purple-200: #B8ADF3;
+  --color-purple-300: #9887EE;
+  --color-purple-400: #8470EA;
+  --color-purple-500: #654CE5;
+  --color-purple-600: #5C45D0;
+  --color-purple-700: #4836A3;
+  --color-purple-800: #382A7E;
+  --color-purple-900: #2A2060;
+
+  /* Gray */
+  --color-gray-50: #F4F4F8;
+  --color-gray-100: #EAEAF1;
+  --color-gray-200: #E1E1E9;
+  --color-gray-300: #C8C6D1;
+  --color-gray-400: #A1A3AB;
+  --color-gray-500: #73717C;
+  --color-gray-600: #55535C;
+  --color-gray-700: #38373F;
+  --color-gray-800: #2A2932;
+  --color-gray-900: #212227;
+
+  /* Mint */
+  --color-mint-100: #C5FBE4;
+  --color-mint-200: #83F4C3;
+  --color-mint-300: #42EAAF;
+  --color-mint-400: #2FBE9C;
+  --color-mint-500: #288F6B;
+
+  /* Red */
+  --color-red-100: #FFF1F2;
+  --color-red-200: #FFDAD9;
+  --color-red-300: #FFC7C2;
+  --color-red-400: #FF2638;
+  --color-red-500: #D61121;
+
+  /* Gray Alpha */
+  --color-gray-alpha-100: rgb(33 34 39 / 8%);
+  --color-gray-alpha-200: rgb(33 34 39 / 16%);
+  --color-gray-alpha-300: rgb(33 34 39 / 40%);
+  --color-gray-alpha-400: rgb(33 34 39 / 60%);
+}
+
+
+/* Semantic Color - Light */
+@theme inline {
+  /* Fill: Primary */
+  --color-fill-primary-strong: var(--color-purple-600);
+  --color-fill-primary-default: var(--color-purple-500);
+  --color-fill-primary-assistive: var(--color-purple-50);
+
+  /* Fill: Secondary */
+  --color-fill-secondary-default: var(--color-mint-300);
+  --color-fill-secondary-assistive: var(--color-mint-100);
+
+  /* Fill: Tertiary */
+  --color-fill-tertiary-default: var(--color-gray-700);
+  --color-fill-tertiary-assistive: var(--color-gray-100);
+  --color-fill-tertiary-inverse: var(--color-common-white);
+
+  /* Fill: State */
+  --color-fill-state-hover: var(--color-gray-alpha-100);
+  --color-fill-state-pressed: var(--color-gray-alpha-200);
+  --color-fill-state-disabled: color-mix(
+  in srgb,
+  var(--color-common-white) 48%,
+  transparent
+  );
+
+  /* Fill: System */
+  --color-fill-system-default: var(--color-red-100);
+  --color-fill-system-hover: var(--color-red-200);
+
+  /* Text: Neutral */
+  --color-text-neutral-title: var(--color-gray-900);
+  --color-text-neutral-description: var(--color-gray-600);
+  --color-text-neutral-caption: var(--color-gray-400);
+  --color-text-neutral-weak: var(--color-gray-300);
+  --color-text-neutral-inverse: var(--color-common-white);
+
+  /* Text: Primary */
+  --color-text-primary-strong: var(--color-purple-800);
+  --color-text-primary-default: var(--color-purple-600);
+  --color-text-primary-assistive: var(--color-purple-400);
+  --color-text-primary-weak: var(--color-purple-100);
+
+  /* Text: Accent */
+  --color-text-accent-strong: var(--color-mint-400);
+  --color-text-accent-default: var(--color-mint-300);
+
+  /* Text: System */
+  --color-text-system-strong: var(--color-red-500);
+  --color-text-system-default: var(--color-red-400);
+
+  /* Border */
+  --color-border-primary-default: var(--color-purple-300);
+  --color-border-neutral-default: var(--color-gray-200);
+  --color-border-neutral-weak: var(--color-gray-100);
+  --color-border-system-error: var(--color-red-400);
+
+  /* Surface */
+  --color-surface-default: var(--color-gray-50);
+  --color-surface-light: var(--color-common-white);
+}
+
+
+/* Atomic Typography */
+@theme {
+  /* Font Family */
+  --font-ko-brand: "Pretendard Variable", sans-serif;
+  --font-ko-body: "Pretendard Variable", sans-serif;
+  --font-eng-brand: "Bricolage Grotesque", sans-serif;
+  --font-eng-body: "Geist", sans-serif;
+
+  /* Font Size */
+  --text-moaft-12: 12px;
+  --text-moaft-14: 14px;
+  --text-moaft-16: 16px;
+  --text-moaft-18: 18px;
+  --text-moaft-20: 20px;
+  --text-moaft-24: 24px;
+  --text-moaft-28: 28px;
+  --text-moaft-36: 36px;
+  --text-moaft-48: 48px;
+  --text-moaft-64: 64px;
+
+  /* Letter Spacing */
+  --tracking-moaft-tight: -0.4px;
+  --tracking-moaft-normal: -0.1px;
+  --tracking-moaft-reading: 0px;
+
+  /* Font Weight */
+  --font-weight-moaft-regular: 400;
+  --font-weight-moaft-medium: 500;
+  --font-weight-moaft-semi-bold: 600;
+  --font-weight-moaft-bold: 700;
+
+  /* Line Height */
+  --leading-moaft-16: 16px;
+  --leading-moaft-20: 20px;
+  --leading-moaft-24: 24px;
+  --leading-moaft-26: 26px;
+  --leading-moaft-28: 28px;
+  --leading-moaft-32: 32px;
+  --leading-moaft-38: 38px;
+  --leading-moaft-48: 48px;
+  --leading-moaft-60: 60px;
+  --leading-moaft-80: 80px;
+}
+
+
+/* Atomic Measurement */
+:root {
+  --moaft-unit-0: 0px;
+  --moaft-unit-4: 4px;
+  --moaft-unit-8: 8px;
+  --moaft-unit-12: 12px;
+  --moaft-unit-16: 16px;
+  --moaft-unit-20: 20px;
+  --moaft-unit-24: 24px;
+  --moaft-unit-32: 32px;
+  --moaft-unit-40: 40px;
+  --moaft-unit-60: 60px;
+  --moaft-unit-99: 99px;
+}
+
+/* Semantic Appearance - Desktop */
+@theme inline {
+  /* Gap */
+  --spacing-moaft-gap-xs: var(--moaft-unit-4);
+  --spacing-moaft-gap-s: var(--moaft-unit-8);
+  --spacing-moaft-gap-m: var(--moaft-unit-12);
+  --spacing-moaft-gap-l: var(--moaft-unit-24);
+  --spacing-moaft-gap-xl: var(--moaft-unit-40);
+  --spacing-moaft-gap-xxl: var(--moaft-unit-60);
+
+  /* Padding */
+  --spacing-moaft-padding-xs: var(--moaft-unit-4);
+  --spacing-moaft-padding-s: var(--moaft-unit-8);
+  --spacing-moaft-padding-m: var(--moaft-unit-12);
+  --spacing-moaft-padding-l: var(--moaft-unit-16);
+  --spacing-moaft-padding-xl: var(--moaft-unit-24);
+  --spacing-moaft-padding-xxl: var(--moaft-unit-32);
+
+  /* Radius */
+  --radius-moaft-s: var(--moaft-unit-4);
+  --radius-moaft-m: var(--moaft-unit-8);
+  --radius-moaft-l: var(--moaft-unit-12);
+  --radius-moaft-full: var(--moaft-unit-99);
+}
