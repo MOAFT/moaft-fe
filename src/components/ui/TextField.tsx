@@ -30,20 +30,20 @@ export default function TextField({
   onChange,
 }: TextFieldProps) {
   return (
-    <div>
+    <div className="w-full max-w-[320px]">
       {showLabel && (
         <div className="mb-2 flex items-center justify-between">
           {label && (
             <label
               htmlFor={id}
-              className="text-moaft-14 text-text-neutral-title"
+              className="font-ko-body text-moaft-14 font-medium leading-moaft-20 tracking-moaft-normal text-text-neutral-description"
             >
               {label}
             </label>
           )}
 
           {maxLength !== undefined && (
-            <span className="text-moaft-12 text-text-neutral-caption">
+            <span className="font-ko-body font-medium leading-moaft-16 tracking-moaft-reading text-moaft-12 text-text-neutral-caption">
               {value.length}/{maxLength}
             </span>
           )}
@@ -51,14 +51,16 @@ export default function TextField({
       )}
       <div className="relative">
         <input
-          className={`w-full h-[52px] rounded-moaft-m border py-2 pl-3 ${trailingItem ? "pr-12" : "pr-3"}
+          className={`w-full h-[52px] rounded-moaft-m border py-2 pl-3 ${trailingItem ? "pr-11" : "pr-3"}
         ${
           errorMessage
             ? "border-border-system-error focus:border-border-system-error"
             : "border-border-neutral-default focus:border-border-primary-default"
         }
-        bg-surface-light enabled:hover:bg-fill-state-hover text-text-neutral-title
+        bg-surface-light font-ko-body text-moaft-16 font-normal leading-moaft-24 tracking-moaft-reading
+        enabled:hover:not-focus:bg-fill-state-hover text-text-neutral-title
         placeholder:text-text-neutral-caption
+        disabled:placeholder:text-text-neutral-weak
         focus:outline-none
         disabled:border-border-neutral-weak
         disabled:bg-fill-state-disabled
@@ -91,12 +93,22 @@ export default function TextField({
       </div>
       {showCaption &&
         (errorMessage ? (
-          <p className="mt-1 text-moaft-12 text-text-system-strong">
+          <p
+            className="font-ko-body font-normal leading-moaft-16 tracking-moaft-reading
+           mt-2 text-moaft-12 text-text-system-strong"
+          >
             {errorMessage}
           </p>
         ) : (
           caption && (
-            <p className="mt-1 text-moaft-12 text-text-neutral-caption">
+            <p
+              className={`font-ko-body font-normal leading-moaft-16 tracking-moaft-reading 
+                mt-2 text-moaft-12 ${
+                  disabled
+                    ? "text-text-neutral-weak"
+                    : "text-text-neutral-description"
+                }`}
+            >
               {caption}
             </p>
           )
