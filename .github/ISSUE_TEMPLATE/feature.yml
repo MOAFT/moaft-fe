@@ -1,4 +1,4 @@
-name: feature
+name: Feature
 description: 사용자에게 제공할 새 기능을 제안하거나 작업을 시작합니다.
 title: "[Feat] "
 labels: ["feature"]

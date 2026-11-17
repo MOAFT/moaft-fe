@@ -1,9 +1,9 @@
-name: bug
+name: Bug
 description: 재현 가능한 오류를 등록합니다.
 title: "[Fix] "
 labels: ["bug"]
 body:
-  - type: textareaS
+  - type: textarea
     id: summary
     attributes:
       label: 오류 설명
@@ -18,7 +18,7 @@ body:
       value: |
         1. 
         2. 
-        3. 
+        3.
     validations:
       required: true
   - type: textarea
