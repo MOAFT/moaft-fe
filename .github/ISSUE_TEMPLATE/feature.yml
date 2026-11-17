@@ -1,0 +1,39 @@
+name: Feature
+description: 사용자에게 제공할 새 기능을 제안하거나 작업을 시작합니다.
+title: "[feat] "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        새 기능의 배경, 범위, 완료 기준을 작성해 주세요.
+  - type: textarea
+    id: background
+    attributes:
+      label: 작업 배경 및 목적
+      description: 이 기능이 필요한 이유와 해결하려는 문제를 작성해 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 할 일
+      description: 구현할 내용을 체크리스트로 작성해 주세요.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 완료 기준
+      description: 작업 완료 여부를 판단할 수 있는 조건을 작성해 주세요.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: 참고 자료
+      description: 디자인 링크, API 문서, 스크린샷 등을 첨부해 주세요.
