@@ -1,6 +1,6 @@
-name: Feature
+name: feature
 description: 사용자에게 제공할 새 기능을 제안하거나 작업을 시작합니다.
-title: "[feat] "
+title: "[Feat] "
 labels: ["feature"]
 body:
   - type: markdown

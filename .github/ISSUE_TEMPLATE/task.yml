@@ -1,6 +1,6 @@
-name: Task
+name: task
 description: 문서, 설정, 테스트, 리팩토링 등 일반 작업을 등록합니다.
-title: "[task] "
+title: "[Task] "
 labels: ["task"]
 body:
   - type: textarea

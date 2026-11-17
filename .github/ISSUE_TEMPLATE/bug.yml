@@ -1,9 +1,9 @@
-name: Bug report
+name: bug
 description: 재현 가능한 오류를 등록합니다.
-title: "[fix] "
+title: "[Fix] "
 labels: ["bug"]
 body:
-  - type: textarea
+  - type: textareaS
     id: summary
     attributes:
       label: 오류 설명
