@@ -30,9 +30,9 @@ export default function ActionButton({
   }[variant];
 
   const iconSizeClass =
-    size === "S"
-      ? "[&_svg]:h-5 [&_svg]:w-5 [&_img]:h-5 [&_img]:w-5"
-      : "[&_svg]:h-6 [&_svg]:w-6 [&_img]:h-6 [&_img]:w-6";
+    size === "L"
+      ? "[&_svg]:h-6 [&_svg]:w-6 [&_img]:h-6 [&_img]:w-6"
+      : "[&_svg]:h-5 [&_svg]:w-5 [&_img]:h-5 [&_img]:w-5";
 
   const interactionClasses = {
     primary:
