@@ -1,0 +1,230 @@
+
+/* ========================================
+   Semantic Typography - Korean
+   ======================================== */
+
+/* Display */
+@utility typo-ko-display-1-bold {
+  @apply font-ko-brand text-moaft-64 font-moaft-bold leading-moaft-80 tracking-moaft-tight;
+}
+
+@utility typo-ko-display-1-medium {
+  @apply font-ko-brand text-moaft-64 font-moaft-medium leading-moaft-80 tracking-moaft-tight;
+}
+
+@utility typo-ko-display-2-bold {
+  @apply font-ko-brand text-moaft-48 font-moaft-bold leading-moaft-60 tracking-moaft-tight;
+}
+
+@utility typo-ko-display-2-semibold {
+  @apply font-ko-brand text-moaft-48 font-moaft-semi-bold leading-moaft-60 tracking-moaft-tight;
+}
+
+@utility typo-ko-display-2-medium {
+  @apply font-ko-brand text-moaft-48 font-moaft-medium leading-moaft-60 tracking-moaft-tight;
+}
+
+/* Title */
+@utility typo-ko-title-1-bold {
+  @apply font-ko-brand text-moaft-36 font-moaft-bold leading-moaft-48 tracking-moaft-tight;
+}
+
+@utility typo-ko-title-1-semibold {
+  @apply font-ko-brand text-moaft-36 font-moaft-semi-bold leading-moaft-48 tracking-moaft-tight;
+}
+
+@utility typo-ko-title-2-bold {
+  @apply font-ko-brand text-moaft-28 font-moaft-bold leading-moaft-38 tracking-moaft-normal;
+}
+
+@utility typo-ko-title-2-semibold {
+  @apply font-ko-brand text-moaft-28 font-moaft-semi-bold leading-moaft-38 tracking-moaft-normal;
+}
+
+/* Heading */
+@utility typo-ko-heading-1-bold {
+  @apply font-ko-brand text-moaft-24 font-moaft-bold leading-moaft-32 tracking-moaft-normal;
+}
+
+@utility typo-ko-heading-1-semibold {
+  @apply font-ko-brand text-moaft-24 font-moaft-semi-bold leading-moaft-32 tracking-moaft-normal;
+}
+
+@utility typo-ko-heading-2-bold {
+  @apply font-ko-brand text-moaft-20 font-moaft-bold leading-moaft-28 tracking-moaft-normal;
+}
+
+@utility typo-ko-heading-2-semibold {
+  @apply font-ko-brand text-moaft-20 font-moaft-semi-bold leading-moaft-28 tracking-moaft-normal;
+}
+
+/* Headline */
+@utility typo-ko-headline-semibold {
+  @apply font-ko-body text-moaft-18 font-moaft-semi-bold leading-moaft-26 tracking-moaft-normal;
+}
+
+/* Body */
+@utility typo-ko-body-semibold {
+  @apply font-ko-body text-moaft-16 font-moaft-semi-bold leading-moaft-24 tracking-moaft-normal;
+}
+
+@utility typo-ko-body-medium {
+  @apply font-ko-body text-moaft-16 font-moaft-medium leading-moaft-24 tracking-moaft-normal;
+}
+
+@utility typo-ko-body-regular {
+  @apply font-ko-body text-moaft-16 font-moaft-regular leading-moaft-24 tracking-moaft-reading;
+}
+
+/* Label 1 */
+@utility typo-ko-label-1-medium {
+  @apply font-ko-body text-moaft-16 font-moaft-medium leading-moaft-24 tracking-moaft-normal;
+}
+
+@utility typo-ko-label-1-regular {
+  @apply font-ko-body text-moaft-16 font-moaft-regular leading-moaft-24 tracking-moaft-normal;
+}
+
+/* Label 2 */
+@utility typo-ko-label-2-semibold {
+  @apply font-ko-body text-moaft-14 font-moaft-semi-bold leading-moaft-20 tracking-moaft-normal;
+}
+
+@utility typo-ko-label-2-medium {
+  @apply font-ko-body text-moaft-14 font-moaft-medium leading-moaft-20 tracking-moaft-normal;
+}
+
+@utility typo-ko-label-2-regular {
+  @apply font-ko-body text-moaft-14 font-moaft-regular leading-moaft-20 tracking-moaft-normal;
+}
+
+/* Caption */
+@utility typo-ko-caption-medium {
+  @apply font-ko-body text-moaft-12 font-moaft-medium leading-moaft-16 tracking-moaft-reading;
+}
+
+@utility typo-ko-caption-regular {
+  @apply font-ko-body text-moaft-12 font-moaft-regular leading-moaft-16 tracking-moaft-reading;
+}
+
+
+/* ========================================
+   Semantic Typography - English
+   ======================================== */
+
+/* Display */
+@utility typo-eng-display-1-bold {
+  @apply font-eng-brand text-moaft-64 font-moaft-bold leading-moaft-80 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-display-1-medium {
+  @apply font-eng-brand text-moaft-64 font-moaft-medium leading-moaft-80 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-display-2-bold {
+  @apply font-eng-brand text-moaft-48 font-moaft-bold leading-moaft-60 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-display-2-semibold {
+  @apply font-eng-brand text-moaft-48 font-moaft-semi-bold leading-moaft-60 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-display-2-medium {
+  @apply font-eng-brand text-moaft-48 font-moaft-medium leading-moaft-60 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+/* Title */
+@utility typo-eng-title-1-bold {
+  @apply font-eng-brand text-moaft-36 font-moaft-bold leading-moaft-48 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-title-1-semibold {
+  @apply font-eng-brand text-moaft-36 font-moaft-semi-bold leading-moaft-48 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-title-2-bold {
+  @apply font-eng-brand text-moaft-28 font-moaft-bold leading-moaft-38 tracking-moaft-normal;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-title-2-semibold {
+  @apply font-eng-brand text-moaft-28 font-moaft-semi-bold leading-moaft-38 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+/* Heading */
+@utility typo-eng-heading-1-bold {
+  @apply font-eng-brand text-moaft-24 font-moaft-bold leading-moaft-32 tracking-moaft-normal;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-heading-1-semibold {
+  @apply font-eng-brand text-moaft-24 font-moaft-semi-bold leading-moaft-32 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-heading-2-bold {
+  @apply font-eng-brand text-moaft-20 font-moaft-bold leading-moaft-28 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-heading-2-semibold {
+  @apply font-eng-brand text-moaft-20 font-moaft-semi-bold leading-moaft-28 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+/* Headline */
+@utility typo-eng-headline-semibold {
+  @apply font-eng-body text-moaft-18 font-moaft-semi-bold leading-moaft-26 tracking-moaft-tight;
+}
+
+/* Body */
+@utility typo-eng-body-semibold {
+  @apply font-eng-body text-moaft-16 font-moaft-semi-bold leading-moaft-24 tracking-moaft-tight;
+}
+
+@utility typo-eng-body-medium {
+  @apply font-eng-body text-moaft-16 font-moaft-medium leading-moaft-24 tracking-moaft-tight;
+}
+
+@utility typo-eng-body-regular {
+  @apply font-eng-body text-moaft-16 font-moaft-regular leading-moaft-24 tracking-moaft-normal;
+}
+
+/* Label 1 */
+@utility typo-eng-label-1-medium {
+  @apply font-eng-body text-moaft-16 font-moaft-medium leading-moaft-24 tracking-moaft-tight;
+}
+
+@utility typo-eng-label-1-regular {
+  @apply font-eng-body text-moaft-16 font-moaft-regular leading-moaft-24 tracking-moaft-normal;
+}
+
+/* Label 2 */
+@utility typo-eng-label-2-semibold {
+  @apply font-eng-body text-moaft-14 font-moaft-semi-bold leading-moaft-20 tracking-moaft-tight;
+}
+
+@utility typo-eng-label-2-medium {
+  @apply font-eng-body text-moaft-14 font-moaft-medium leading-moaft-20 tracking-moaft-normal;
+}
+
+@utility typo-eng-label-2-regular {
+  @apply font-eng-body text-moaft-14 font-moaft-regular leading-moaft-20 tracking-moaft-normal;
+}
+
+/* Caption */
+@utility typo-eng-caption-medium {
+  @apply font-eng-body text-moaft-12 font-moaft-medium leading-moaft-16 tracking-moaft-normal;
+}
+
+@utility typo-eng-caption-regular {
+  @apply font-eng-body text-moaft-12 font-moaft-regular leading-moaft-16 tracking-moaft-normal;
+}
