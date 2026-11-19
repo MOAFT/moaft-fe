@@ -1,21 +1,21 @@
 import type { ReactNode } from "react";
 
 type IconButtonProps = {
-  icon: ReactNode;
-  variant?: "default" | "fill";
-  ariaLabel: string;
-  onClick?: () => void;
-  disabled?: boolean;
-  iconSize?: 24 | 28;
+  icon: ReactNode; //버튼 안에 표시할 아이콘
+  variant?: "default" | "fill"; //버튼 배경 스타일
+  ariaLabel: string; //아이콘만으로 버튼의 목적을 알 수 있도록 설명을 전달
+  onClick?: () => void; //버튼을 클릭했을 때 실행할 함수
+  disabled?: boolean; //true이면 버튼을 조작할 수 없음
+  iconSize?: 24 | 28; //아이콘 크기
 };
 
 export default function IconButton({
-  icon, //버튼 안에 표시할 아이콘
-  variant = "default", //버튼 배경 스타일
-  ariaLabel, //아이콘만으로 버튼의 목적을 알 수 있도록 설명을 전달
-  onClick, //버튼을 클릭했을 때 실행할 함수
-  disabled = false, //true이면 버튼을 조작할 수 없음
-  iconSize = 24, //아이콘 크기
+  icon, 
+  variant = "default", 
+  ariaLabel, 
+  onClick,
+  disabled = false,
+  iconSize = 24, 
 }: IconButtonProps) {
 
   const iconSizeClass =
