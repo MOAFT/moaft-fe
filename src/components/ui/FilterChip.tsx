@@ -1,7 +1,7 @@
 type FilterChipProps = {
-  label: string;
-  selected: boolean;
-  onClick?: () => void;
+  label: string; //칩에 표시할 필터 이름
+  selected: boolean; //현재 필터가 선택되었는지 나타냄
+  onClick?: () => void; //칩을 클릭했을 때 실행할 함수
 };
 
 export default function FilterChip({

@@ -1,8 +1,8 @@
 type SelectionChipProps = {
-  label: string;
-  selected: boolean;
-  disabled?: boolean;
-  onClick?: () => void;
+  label: string; //칩에 표시할 문구
+  selected: boolean; //현재 선택 여부
+  disabled?: boolean; //true이면 칩을 선택할 수 없음
+  onClick?: () => void; //칩을 클릭했을 때 실행할 함수
 };
 
 export default function SelectionChip({

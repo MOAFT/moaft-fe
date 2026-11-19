@@ -1,9 +1,9 @@
 type CheckBoxProps = {
-  checked: boolean;
-  label: string;
-  showLabel?: boolean;
-  disabled?: boolean;
-  onChange: (checked: boolean) => void;
+  checked: boolean; //현재 선택 여부
+  label: string; //체크박스와 함께 표시하며, 라벨을 숨겨도 접근성 이름으로 사용
+  showLabel?: boolean; //false이면 화면의 라벨을 숨김
+  disabled?: boolean; //true이면 체크박스를 조작할 수 없음
+  onChange: (checked: boolean) => void; //체크 상태가 바뀌면 새 상태를 부모 컴포넌트에 전달
 };
 
 export default function CheckBox({

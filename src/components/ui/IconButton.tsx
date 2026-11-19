@@ -10,19 +10,19 @@ type IconButtonProps = {
 };
 
 export default function IconButton({
-  icon,
-  variant = "default",
-  ariaLabel,
-  onClick,
-  disabled = false,
-  iconSize = 24,
+  icon, //버튼 안에 표시할 아이콘
+  variant = "default", //버튼 배경 스타일
+  ariaLabel, //아이콘만으로 버튼의 목적을 알 수 있도록 설명을 전달
+  onClick, //버튼을 클릭했을 때 실행할 함수
+  disabled = false, //true이면 버튼을 조작할 수 없음
+  iconSize = 24, //아이콘 크기
 }: IconButtonProps) {
 
   const iconSizeClass =
     iconSize === 28
       ? "[&_svg]:h-7 [&_svg]:w-7 [&_img]:h-7 [&_img]:w-7"
       : "[&_svg]:h-6 [&_svg]:w-6 [&_img]:h-6 [&_img]:w-6";
-      
+
   return (
     <div>
       <button

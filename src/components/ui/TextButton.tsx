@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
 type TextButtonProps = {
-  label: string;
-  trailingIcon?: ReactNode;
-  onClick?: () => void;
+  label: string; //버튼에 표시할 문구
+  trailingIcon?: ReactNode; //문구 오른쪽에 표시할 선택 아이콘
+  onClick?: () => void; //버튼을 클릭했을 때 실행할 함수
 };
 
 export default function TextButton({

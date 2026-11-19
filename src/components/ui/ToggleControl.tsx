@@ -1,8 +1,8 @@
 type ToggleControlProps = {
-  checked: boolean;
-  label: string;
-  disabled?: boolean;
-  onChange: (checked: boolean) => void;
+  checked: boolean; //현재 켜짐 여부
+  label: string; //토글 옆에 표시할 문구
+  disabled?: boolean;//true이면 조작할 수 없는 비활성 상태로 표시
+  onChange: (checked: boolean) => void; //토글 상태가 바뀌면 새 상태를 부모 컴포넌트에 전달
 };
 
 export default function ToggleControl({

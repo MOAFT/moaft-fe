@@ -1,18 +1,18 @@
 import checkRoundIcon from "../../assets/icons/IconCheckRound.svg";
 
 type TextFieldProps = {
-  placeholder?: string;
-  caption?: string;
-  value: string;
-  disabled?: boolean;
-  errorMessage?: string;
-  label?: string;
-  showLabel?: boolean;
-  showCaption?: boolean;
-  id: string;
-  maxLength?: number;
-  trailingItem?: boolean;
-  onChange: (value: string) => void;
+  placeholder?: string; //입력창에 표시할 안내 문구
+  caption?: string; //오류가 없을 때 표시할 보조 설명. 오류 문구가 있으면 대체
+  value: string; //입력값
+  disabled?: boolean; //true이면 입력할 수 없는 비활성 상태로 표시
+  errorMessage?: string;// 전달하면 입력창을 오류 상태로 표시하고 이 문구를 보여줌
+  label?: string; //입력창 위에 표시할 라벨
+  showLabel?: boolean; //false이면 라벨 영역과 글자 수 표시를 숨김
+  showCaption?: boolean; //false이면 보조 설명이나 오류 문구를 숨김
+  id: string; //label과 입력창을 연결하는 고유한 HTML id
+  maxLength?: number; //입력 가능한 최대 글자 수
+  trailingItem?: boolean; //true이면 입력창 오른쪽에 완료 아이콘을 표시
+  onChange: (value: string) => void; //입력값이 바뀌면 새 문자열을 부모 컴포넌트에 전달
 };
 
 export default function TextField({

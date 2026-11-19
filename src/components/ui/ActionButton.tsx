@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 
 type ActionButtonProps = {
-  label: string;
-  variant?: "primary" | "secondary" | "tertiary";
-  size?: "S" | "M" | "L";
-  trailingIcon?: ReactNode;
-  disabled?: boolean;
-  onClick?: () => void;
+  label: string; //버튼에 표시할 문구
+  variant?: "primary" | "secondary" | "tertiary"; //버튼의 강조 스타일. 기본값은 primary
+  size?: "S" | "M" | "L"; //버튼 크기. 기본값은 M
+  trailingIcon?: ReactNode; //문구 오른쪽에 표시할 아이콘
+  disabled?: boolean; //true이면 버튼을 조작할 수 없음
+  onClick?: () => void; //버튼을 클릭했을 때 실행할 함수
 };
 
 export default function ActionButton({
