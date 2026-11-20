@@ -33,12 +33,17 @@ export default function LandingHeader({ activeTab }: { activeTab: LandingTab }) 
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-fill-primary-default flex items-center justify-between min-h-[97px] px-[32px] py-[4px]">
-      <img
-        src={headerLogo}
-        alt="Moaft"
-        className="w-[89px] h-[89px] cursor-pointer"
+      <div
+        className="relative overflow-hidden size-[89px] flex-shrink-0 cursor-pointer"
         onClick={() => navigate('/')}
-      />
+      >
+        <img
+          src={headerLogo}
+          alt="Moaft"
+          className="absolute block"
+          style={{ width: 82.047, height: 23.787, left: 3.65, top: 32.68 }}
+        />
+      </div>
       <nav className="flex gap-moaft-gap-s items-center">
         {NAV_ITEMS.map(({ label, tab, path }) => (
           <NavItem
@@ -51,7 +56,7 @@ export default function LandingHeader({ activeTab }: { activeTab: LandingTab }) 
       </nav>
       <button
         onClick={() => navigate('/login')}
-        className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-text-primary-default text-moaft-16 leading-moaft-24 tracking-moaft-normal font-ko-body font-normal cursor-pointer border-0"
+        className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-text-primary-default text-moaft-16 leading-moaft-24 tracking-moaft-normal font-ko-body font-medium cursor-pointer border-0"
       >
         시작하기
       </button>
