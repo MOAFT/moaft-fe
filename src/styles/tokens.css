@@ -62,42 +62,45 @@
 
   /* Fill: Tertiary */
   --color-fill-tertiary-default: var(--color-gray-800);
-  --color-fill-tertiary-assistive: var(--color-gray-100);
+  --color-fill-tertiary-assistive: var(--color-gray-50);
   --color-fill-tertiary-inverse: var(--color-common-white);
 
   /* Fill: State */
   --color-fill-state-hover: var(--color-gray-alpha-100);
   --color-fill-state-pressed: var(--color-gray-alpha-200);
   --color-fill-state-disabled: color-mix(
-  in srgb,
-  var(--color-common-white) 48%,
-  transparent
+    in srgb,
+    var(--color-common-white) 48%,
+    transparent
   );
 
   /* Fill: System */
   --color-fill-system-default: var(--color-red-100);
   --color-fill-system-hover: var(--color-red-200);
 
-  /* Text: Neutral */
-  --color-text-neutral-title: var(--color-gray-900);
-  --color-text-neutral-description: var(--color-gray-600);
-  --color-text-neutral-caption: var(--color-gray-400);
-  --color-text-neutral-weak: var(--color-gray-300);
-  --color-text-neutral-inverse: var(--color-common-white);
+  /* Fill: Layer */
+  --color-fill-layer-overlay: var(--color-gray-alpha-400);
 
-  /* Text: Primary */
-  --color-text-primary-strong: var(--color-purple-800);
-  --color-text-primary-default: var(--color-purple-600);
-  --color-text-primary-assistive: var(--color-purple-400);
-  --color-text-primary-weak: var(--color-purple-100);
+  /* FG: Neutral */
+  --color-fg-neutral-title: var(--color-gray-900);
+  --color-fg-neutral-description: var(--color-gray-600);
+  --color-fg-neutral-caption: var(--color-gray-400);
+  --color-fg-neutral-weak: var(--color-gray-300);
+  --color-fg-neutral-inverse: var(--color-common-white);
 
-  /* Text: Accent */
-  --color-text-accent-strong: var(--color-mint-400);
-  --color-text-accent-default: var(--color-mint-300);
+  /* FG: Primary */
+  --color-fg-primary-strong: var(--color-purple-700);
+  --color-fg-primary-default: var(--color-purple-600);
+  --color-fg-primary-assistive: var(--color-purple-400);
+  --color-fg-primary-weak: var(--color-purple-100);
 
-  /* Text: System */
-  --color-text-system-strong: var(--color-red-500);
-  --color-text-system-default: var(--color-red-400);
+  /* FG: Accent */
+  --color-fg-accent-strong: var(--color-mint-500);
+  --color-fg-accent-default: var(--color-mint-300);
+
+  /* FG: System */
+  --color-fg-system-strong: var(--color-red-500);
+  --color-fg-system-default: var(--color-red-400);
 
   /* Border */
   --color-border-primary-default: var(--color-purple-300);
@@ -106,7 +109,7 @@
   --color-border-system-error: var(--color-red-400);
 
   /* Surface */
-  --color-surface-default: var(--color-gray-50);
+  --color-surface-subtle: var(--color-gray-100);
   --color-surface-light: var(--color-common-white);
 }
 
