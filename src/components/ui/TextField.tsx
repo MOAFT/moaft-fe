@@ -55,7 +55,7 @@ export default function TextField({
             errorMessage
               ? "border-border-system-error focus:border-border-system-error"
               : "border-border-neutral-default focus:border-border-primary-default"
-          } bg-surface-light typo-ko-body-regular text-fg-neutral-title enabled:hover:not-focus:bg-fill-state-hover placeholder:text-fg-neutral-caption disabled:placeholder:text-fg-neutral-weak focus:outline-none disabled:border-border-neutral-weak disabled:bg-fill-state-disabled disabled:text-fg-neutral-weak disabled:cursor-not-allowed`}
+          } bg-surface-light typo-ko-body-regular text-fg-neutral-title enabled:hover:not-focus:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)] placeholder:text-fg-neutral-caption disabled:placeholder:text-fg-neutral-weak focus:outline-none disabled:border-border-neutral-weak disabled:shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)] disabled:text-fg-neutral-weak disabled:cursor-not-allowed`}
           type="text"
           id={id}
           placeholder={placeholder}

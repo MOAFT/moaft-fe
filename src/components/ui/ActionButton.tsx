@@ -36,12 +36,8 @@ export default function ActionButton({
       ? "[&_svg]:h-6 [&_svg]:w-6 [&_img]:h-6 [&_img]:w-6"
       : "[&_svg]:h-5 [&_svg]:w-5 [&_img]:h-5 [&_img]:w-5";
 
-  const interactionClasses = {
-    primary:
-      "hover:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)] active:shadow-[inset_0_0_0_9999px_var(--color-fill-state-pressed)]",
-    secondary: "hover:bg-purple-100 active:bg-purple-200",
-    tertiary: "hover:bg-gray-300 active:bg-gray-400",
-  }[variant];
+const interactionClasses =
+  "enabled:hover:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)] enabled:active:shadow-[inset_0_0_0_9999px_var(--color-fill-state-pressed)]";
 
   const disabledTextClass =
     variant === "tertiary"
