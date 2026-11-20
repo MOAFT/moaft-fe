@@ -1,8 +1,8 @@
 type ProfileButtonProps = {
-  src: string; //프로필 이미지 주소
-  alt: string; //이미지 대체 텍스트. 장식용 이미지가 아니라면 사용자를 설명하는 문구를 전달
-  size?: "S" | "M"; //버튼 크기. 기본값은 M
-  onClick?: () => void; //프로필 버튼을 클릭했을 때 실행할 함수
+  src: string; // 프로필 이미지 주소
+  alt: string; // 이미지 대체 텍스트. 장식용 이미지가 아니라면 사용자를 설명하는 문구를 전달
+  size?: "S" | "M"; // 버튼 크기. 기본값은 M
+  onClick?: () => void; // 프로필 버튼을 클릭했을 때 실행할 함수
 };
 
 export default function ProfileButton({
@@ -27,7 +27,7 @@ export default function ProfileButton({
 
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-10 rounded-moaft-full group-hover:bg-gray-alpha-100 group-active:bg-gray-alpha-200"
+        className="pointer-events-none absolute inset-0 z-10 rounded-moaft-full group-hover:bg-fill-state-hover group-active:bg-fill-state-pressed"
       />
     </button>
   );

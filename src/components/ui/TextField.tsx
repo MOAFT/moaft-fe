@@ -1,18 +1,18 @@
 import checkRoundIcon from "../../assets/icons/IconCheckRound.svg";
 
 type TextFieldProps = {
-  placeholder?: string; //입력창에 표시할 안내 문구
-  caption?: string; //오류가 없을 때 표시할 보조 설명. 오류 문구가 있으면 대체
-  value: string; //입력값
-  disabled?: boolean; //true이면 입력할 수 없는 비활성 상태로 표시
-  errorMessage?: string;// 전달하면 입력창을 오류 상태로 표시하고 이 문구를 보여줌
-  label?: string; //입력창 위에 표시할 라벨
-  showLabel?: boolean; //false이면 라벨 영역과 글자 수 표시를 숨김
-  showCaption?: boolean; //false이면 보조 설명이나 오류 문구를 숨김
-  id: string; //label과 입력창을 연결하는 고유한 HTML id
-  maxLength?: number; //입력 가능한 최대 글자 수
-  trailingItem?: boolean; //true이면 입력창 오른쪽에 완료 아이콘을 표시
-  onChange: (value: string) => void; //입력값이 바뀌면 새 문자열을 부모 컴포넌트에 전달
+  placeholder?: string; // 입력창에 표시할 안내 문구
+  caption?: string; // 오류가 없을 때 표시할 보조 설명
+  value: string; // 입력값
+  disabled?: boolean; // 비활성 상태 여부
+  errorMessage?: string; // 전달하면 오류 상태와 오류 문구를 표시
+  label?: string; // 입력창 위에 표시할 라벨
+  showLabel?: boolean; // false이면 라벨과 글자 수 표시를 숨김
+  showCaption?: boolean; // false이면 입력창 아래 영역을 숨김
+  id: string; // label과 입력창을 연결하는 고유한 HTML id
+  maxLength?: number; // 입력 가능한 최대 글자 수
+  trailingItem?: boolean; // true이면 입력창 오른쪽에 완료 아이콘 표시
+  onChange: (value: string) => void; // 입력값 변경 시 부모 컴포넌트에 전달
 };
 
 export default function TextField({
@@ -29,43 +29,33 @@ export default function TextField({
   trailingItem = false,
   onChange,
 }: TextFieldProps) {
-  return (
-    <div className="w-full max-w-[320px]">
-      {showLabel && (
-        <div className="mb-2 flex items-center justify-between">
-          {label && (
-            <label
-              htmlFor={id}
-              className="font-ko-body text-moaft-14 font-medium leading-moaft-20 tracking-moaft-normal text-fg-neutral-description"
-            >
-              {label}
-            </label>
-          )}
+  const showLimitMarker = showLabel && maxLength !== undefined;
+  const hasCaptionContent = Boolean(
+    errorMessage || caption || showLimitMarker,
+  );
 
-          {maxLength !== undefined && (
-            <span className="font-ko-body font-medium leading-moaft-16 tracking-moaft-reading text-moaft-12 text-fg-neutral-caption">
-              {value.length}/{maxLength}
-            </span>
-          )}
+  return (
+    <div className="w-full">
+      {showLabel && label && (
+        <div className="mb-moaft-gap-s">
+          <label
+            htmlFor={id}
+            className="typo-ko-label-2-medium text-fg-neutral-description"
+          >
+            {label}
+          </label>
         </div>
       )}
+
       <div className="relative">
         <input
-          className={`w-full h-[52px] rounded-moaft-m border py-2 pl-3 ${trailingItem ? "pr-11" : "pr-3"}
-        ${
-          errorMessage
-            ? "border-border-system-error focus:border-border-system-error"
-            : "border-border-neutral-default focus:border-border-primary-default"
-        }
-        bg-surface-light font-ko-body text-moaft-16 font-normal leading-moaft-24 tracking-moaft-reading
-        enabled:hover:not-focus:bg-fill-state-hover text-fg-neutral-title
-        placeholder:text-fg-neutral-caption
-        disabled:placeholder:text-fg-neutral-weak
-        focus:outline-none
-        disabled:border-border-neutral-weak
-        disabled:bg-fill-state-disabled
-        disabled:text-fg-neutral-weak
-        disabled:cursor-not-allowed`}
+          className={`h-[52px] w-full rounded-moaft-m border py-2 pl-3 ${
+            trailingItem ? "pr-11" : "pr-3"
+          } ${
+            errorMessage
+              ? "border-border-system-error focus:border-border-system-error"
+              : "border-border-neutral-default focus:border-border-primary-default"
+          } bg-surface-light typo-ko-body-regular text-fg-neutral-title enabled:hover:not-focus:bg-fill-state-hover placeholder:text-fg-neutral-caption disabled:placeholder:text-fg-neutral-weak focus:outline-none disabled:border-border-neutral-weak disabled:bg-fill-state-disabled disabled:text-fg-neutral-weak disabled:cursor-not-allowed`}
           type="text"
           id={id}
           placeholder={placeholder}
@@ -82,6 +72,7 @@ export default function TextField({
             onChange(nextValue);
           }}
         />
+
         {trailingItem && (
           <img
             src={checkRoundIcon}
@@ -91,28 +82,34 @@ export default function TextField({
           />
         )}
       </div>
-      {showCaption &&
-        (errorMessage ? (
-          <p
-            className="font-ko-body font-normal leading-moaft-16 tracking-moaft-reading
-           mt-2 text-moaft-12 text-fg-system-strong"
-          >
-            {errorMessage}
-          </p>
-        ) : (
-          caption && (
+
+      {showCaption && hasCaptionContent && (
+        <div className="mt-moaft-gap-s flex items-center justify-between gap-moaft-gap-s">
+          {errorMessage ? (
+            <p className="min-w-0 typo-ko-caption-regular text-fg-system-strong">
+              {errorMessage}
+            </p>
+          ) : caption ? (
             <p
-              className={`font-ko-body font-normal leading-moaft-16 tracking-moaft-reading 
-                mt-2 text-moaft-12 ${
-                  disabled
-                    ? "text-fg-neutral-weak"
-                    : "text-fg-neutral-description"
-                }`}
+              className={`min-w-0 typo-ko-caption-regular ${
+                disabled
+                  ? "text-fg-neutral-weak"
+                  : "text-fg-neutral-description"
+              }`}
             >
               {caption}
             </p>
-          )
-        ))}
+          ) : (
+            <span />
+          )}
+
+          {showLimitMarker && (
+            <span className="shrink-0 typo-ko-caption-medium text-fg-neutral-caption">
+              {value.length}/{maxLength}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

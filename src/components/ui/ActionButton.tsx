@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 
 type ActionButtonProps = {
-  label: string; //버튼에 표시할 문구
+  label: string; // 버튼에 표시할 문구
   variant?: "primary" | "secondary" | "tertiary"; //버튼의 강조 스타일. 기본값은 primary
-  size?: "S" | "M" | "L"; //버튼 크기. 기본값은 M
-  trailingIcon?: ReactNode; //문구 오른쪽에 표시할 아이콘
-  disabled?: boolean; //true이면 버튼을 조작할 수 없음
-  onClick?: () => void; //버튼을 클릭했을 때 실행할 함수
+  size?: "S" | "M" | "L"; // 버튼 크기. 기본값은 M
+  trailingIcon?: ReactNode; // 문구 오른쪽에 표시할 아이콘
+  disabled?: boolean; // true이면 버튼을 조작할 수 없음
+  onClick?: () => void; // 버튼을 클릭했을 때 실행할 함수
 };
 
 export default function ActionButton({
@@ -18,10 +18,10 @@ export default function ActionButton({
   onClick,
 }: ActionButtonProps) {
   const sizeClasses = {
-    S: "h-[36px] px-moaft-padding-l text-moaft-14 leading-moaft-20",
-    M: "h-[48px] px-moaft-padding-xl text-moaft-16 leading-[22px]",
-    L: "h-[52px] px-moaft-padding-xl text-moaft-16 leading-[22px]",
-  }[size];
+  S: "h-[36px] px-moaft-padding-l typo-ko-label-2-medium",
+  M: "h-[48px] px-moaft-padding-xl typo-ko-label-1-medium",
+  L: "h-[52px] px-moaft-padding-xl typo-ko-label-1-medium",
+}[size];
 
   const variantClasses = {
     primary: "bg-fill-primary-default text-fg-neutral-inverse",
@@ -48,7 +48,7 @@ export default function ActionButton({
 
   return (
     <button
-      className={`inline-flex w-fit items-center justify-center gap-moaft-gap-xs rounded-moaft-s border-0 font-ko-body font-moaft-medium whitespace-nowrap ${sizeClasses} ${variantClasses} ${interactionClasses} ${disabledTextClass} disabled:shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)] disabled:cursor-not-allowed`}
+      className={`inline-flex w-fit items-center justify-center gap-moaft-gap-xs rounded-moaft-s border-0 whitespace-nowrap ${sizeClasses} ${variantClasses} ${interactionClasses} ${disabledTextClass} disabled:shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)] disabled:cursor-not-allowed`}
       type="button"
       onClick={onClick}
       disabled={disabled}

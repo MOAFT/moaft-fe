@@ -1,9 +1,9 @@
 type CheckBoxProps = {
-  checked: boolean; //현재 선택 여부
-  label: string; //체크박스와 함께 표시하며, 라벨을 숨겨도 접근성 이름으로 사용
-  showLabel?: boolean; //false이면 화면의 라벨을 숨김
-  disabled?: boolean; //true이면 체크박스를 조작할 수 없음
-  onChange: (checked: boolean) => void; //체크 상태가 바뀌면 새 상태를 부모 컴포넌트에 전달
+  checked: boolean; // 현재 선택 여부
+  label: string; // 체크박스와 함께 표시하며, 라벨을 숨겨도 접근성 이름으로 사용
+  showLabel?: boolean; // false이면 화면의 라벨을 숨김
+  disabled?: boolean; // true이면 체크박스를 조작할 수 없음
+  onChange: (checked: boolean) => void; // 체크 상태가 바뀌면 새 상태를 부모 컴포넌트에 전달
 };
 
 export default function CheckBox({
@@ -14,13 +14,13 @@ export default function CheckBox({
   onChange,
 }: CheckBoxProps) {
   const boxClasses = checked
-    ? "border-purple-500 bg-purple-500 text-white"
-    : "border-border-neutral-default bg-common-white";
+    ? "border-purple-500 bg-fill-primary-default text-fg-neutral-inverse"
+    : "border-border-neutral-default bg-surface-light";
 
   const disabledClasses = disabled
     ? checked
       ? "shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
-      : "border-gray-100 shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
+      : "border-border-neutral-weak shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
     : "";
 
   return (
@@ -55,7 +55,7 @@ export default function CheckBox({
 
       {showLabel && label && (
         <span
-          className={`font-ko-body text-moaft-16 font-moaft-regular leading-moaft-24 tracking-moaft-normal ${
+          className={`typo-ko-label-1-regular ${
             disabled ? "text-fg-neutral-weak" : "text-fg-neutral-title"
           }`}
         >
