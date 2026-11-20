@@ -32,9 +32,7 @@ export default function SidebarItem({
         gap-moaft-gap-xs overflow-hidden
         rounded-moaft-m
         px-moaft-padding-m py-moaft-padding-s
-        font-ko-body text-moaft-14
-        font-moaft-regular leading-moaft-20
-        tracking-moaft-normal
+        typo-ko-label-2-regular
         focus-visible:outline-2
         focus-visible:outline-fill-primary-default
         ${stateClass}

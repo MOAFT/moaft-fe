@@ -12,8 +12,8 @@ export default function NavItemBrand({
   className = "",
 }: NavItemBrandProps) {
   const textClass = selected
-    ? "font-moaft-semi-bold tracking-moaft-normal"
-    : "font-moaft-regular tracking-moaft-reading";
+    ? "typo-ko-body-semibold"
+    : "typo-ko-body-regular";
 
   return (
     <a
@@ -24,7 +24,6 @@ export default function NavItemBrand({
         whitespace-nowrap
         rounded-moaft-m
         px-moaft-padding-m py-moaft-padding-s
-        font-ko-body text-moaft-16 leading-moaft-24
         text-fg-neutral-inverse
         hover:bg-fill-tertiary-inverse/10
         active:bg-fill-tertiary-inverse/20

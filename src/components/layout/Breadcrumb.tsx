@@ -38,13 +38,11 @@ export default function Breadcrumb({
         const isCurrent = step.type === type;
 
         const textClass = isCurrent
-          ? "font-moaft-semi-bold text-fg-neutral-title"
-          : "font-moaft-medium text-fg-neutral-caption";
+          ? "typo-ko-label-2-semibold text-fg-neutral-title"
+          : "typo-ko-label-2-medium text-fg-neutral-caption";
 
         const classNames = `
           shrink-0 whitespace-nowrap
-          font-ko-body text-moaft-14 leading-moaft-20
-          tracking-moaft-normal
           ${textClass}
         `;
 
