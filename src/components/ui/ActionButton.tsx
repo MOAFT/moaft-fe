@@ -24,9 +24,9 @@ export default function ActionButton({
   }[size];
 
   const variantClasses = {
-    primary: "bg-fill-primary-default text-text-neutral-inverse",
-    secondary: "bg-fill-primary-assistive text-text-primary-default",
-    tertiary: "bg-fill-tertiary-assistive text-text-neutral-title",
+    primary: "bg-fill-primary-default text-fg-neutral-inverse",
+    secondary: "bg-fill-primary-assistive text-fg-primary-default",
+    tertiary: "bg-fill-tertiary-assistive text-fg-neutral-title",
   }[variant];
 
   const iconSizeClass =
@@ -43,8 +43,8 @@ export default function ActionButton({
 
   const disabledTextClass =
     variant === "tertiary"
-      ? "disabled:text-text-neutral-weak"
-      : "disabled:text-text-primary-weak";
+      ? "disabled:text-fg-neutral-weak"
+      : "disabled:text-fg-primary-weak";
 
   return (
     <button

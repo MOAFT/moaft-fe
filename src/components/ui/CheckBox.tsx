@@ -56,7 +56,7 @@ export default function CheckBox({
       {showLabel && label && (
         <span
           className={`font-ko-body text-moaft-16 font-moaft-regular leading-moaft-24 tracking-moaft-normal ${
-            disabled ? "text-text-neutral-weak" : "text-text-neutral-title"
+            disabled ? "text-fg-neutral-weak" : "text-fg-neutral-title"
           }`}
         >
           {label}

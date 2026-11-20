@@ -36,14 +36,14 @@ export default function TextField({
           {label && (
             <label
               htmlFor={id}
-              className="font-ko-body text-moaft-14 font-medium leading-moaft-20 tracking-moaft-normal text-text-neutral-description"
+              className="font-ko-body text-moaft-14 font-medium leading-moaft-20 tracking-moaft-normal text-fg-neutral-description"
             >
               {label}
             </label>
           )}
 
           {maxLength !== undefined && (
-            <span className="font-ko-body font-medium leading-moaft-16 tracking-moaft-reading text-moaft-12 text-text-neutral-caption">
+            <span className="font-ko-body font-medium leading-moaft-16 tracking-moaft-reading text-moaft-12 text-fg-neutral-caption">
               {value.length}/{maxLength}
             </span>
           )}
@@ -58,13 +58,13 @@ export default function TextField({
             : "border-border-neutral-default focus:border-border-primary-default"
         }
         bg-surface-light font-ko-body text-moaft-16 font-normal leading-moaft-24 tracking-moaft-reading
-        enabled:hover:not-focus:bg-fill-state-hover text-text-neutral-title
-        placeholder:text-text-neutral-caption
-        disabled:placeholder:text-text-neutral-weak
+        enabled:hover:not-focus:bg-fill-state-hover text-fg-neutral-title
+        placeholder:text-fg-neutral-caption
+        disabled:placeholder:text-fg-neutral-weak
         focus:outline-none
         disabled:border-border-neutral-weak
         disabled:bg-fill-state-disabled
-        disabled:text-text-neutral-weak
+        disabled:text-fg-neutral-weak
         disabled:cursor-not-allowed`}
           type="text"
           id={id}
@@ -95,7 +95,7 @@ export default function TextField({
         (errorMessage ? (
           <p
             className="font-ko-body font-normal leading-moaft-16 tracking-moaft-reading
-           mt-2 text-moaft-12 text-text-system-strong"
+           mt-2 text-moaft-12 text-fg-system-strong"
           >
             {errorMessage}
           </p>
@@ -105,8 +105,8 @@ export default function TextField({
               className={`font-ko-body font-normal leading-moaft-16 tracking-moaft-reading 
                 mt-2 text-moaft-12 ${
                   disabled
-                    ? "text-text-neutral-weak"
-                    : "text-text-neutral-description"
+                    ? "text-fg-neutral-weak"
+                    : "text-fg-neutral-description"
                 }`}
             >
               {caption}

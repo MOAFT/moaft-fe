@@ -13,11 +13,11 @@ export default function SelectionChip({
 }: SelectionChipProps) {
   const stateClasses = disabled
     ? selected
-      ? "border-border-neutral-weak bg-fill-primary-assistive text-text-primary-weak shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
-      : "border-border-neutral-weak bg-common-white text-text-neutral-weak shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
+      ? "border-border-neutral-weak bg-fill-primary-assistive text-fg-primary-weak shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
+      : "border-border-neutral-weak bg-common-white text-fg-neutral-weak shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)]"
     : selected
-      ? "border-border-primary-default bg-fill-primary-assistive text-text-primary-default hover:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)]"
-      : "border-border-neutral-default bg-common-white text-text-neutral-title hover:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)]";
+      ? "border-border-primary-default bg-fill-primary-assistive text-fg-primary-default hover:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)]"
+      : "border-border-neutral-default bg-common-white text-fg-neutral-title hover:shadow-[inset_0_0_0_9999px_var(--color-fill-state-hover)]";
 
   return (
     <button

@@ -13,7 +13,7 @@ export default function TextButton({
 }: TextButtonProps) {
   return (
     <button
-      className="inline-flex min-h-[44px] min-w-[44px] w-fit items-center justify-center gap-0 border-0 bg-transparent p-0 font-ko-body text-moaft-14 font-moaft-medium leading-moaft-20 tracking-moaft-normal text-[#525259] underline"
+      className="inline-flex min-h-[44px] min-w-[44px] w-fit items-center justify-center gap-0 border-0 bg-transparent p-0 font-ko-body text-moaft-14 font-moaft-medium leading-moaft-20 tracking-moaft-normal text-fg-neutral-description underline"
       type="button"
       onClick={onClick}
     >
