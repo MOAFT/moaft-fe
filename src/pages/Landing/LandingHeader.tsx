@@ -17,10 +17,10 @@ function NavItem({ label, selected = false, onClick }: {
   return (
     <button
       onClick={onClick}
-      className={`px-moaft-padding-m py-moaft-padding-s rounded-moaft-m text-text-neutral-inverse text-moaft-16 leading-moaft-24 font-ko-body cursor-pointer bg-transparent border-0 ${
+      className={`px-moaft-padding-m py-moaft-padding-s rounded-moaft-m text-fg-neutral-inverse cursor-pointer bg-transparent border-0 ${
         selected
-          ? 'font-semibold tracking-moaft-normal'
-          : 'font-normal tracking-moaft-reading hover:bg-white/10 active:bg-white/20'
+          ? 'typo-ko-body-semibold'
+          : 'typo-ko-body-regular hover:bg-white/10 active:bg-white/20'
       }`}
     >
       {label}
@@ -56,7 +56,7 @@ export default function LandingHeader({ activeTab }: { activeTab: LandingTab }) 
       </nav>
       <button
         onClick={() => navigate('/login')}
-        className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-text-primary-default text-moaft-16 leading-moaft-24 tracking-moaft-normal font-ko-body font-medium cursor-pointer border-0"
+        className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0"
       >
         시작하기
       </button>

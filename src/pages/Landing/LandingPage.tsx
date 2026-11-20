@@ -54,10 +54,10 @@ function AnalysisGauge({ progress }: { progress: MotionValue<number> }) {
         />
       </svg>
       <div className="relative flex items-baseline gap-[6px]">
-        <span className="font-ko-brand font-moaft-semi-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-fill-primary-default tabular-nums">
+        <span className="typo-ko-display-2-semibold text-fill-primary-default tabular-nums">
           {count}
         </span>
-        <span className="font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal text-text-neutral-title">
+        <span className="typo-ko-title-2-semibold text-fg-neutral-title">
           %
         </span>
       </div>
@@ -104,7 +104,7 @@ function ProblemCycler() {
       aria-label={`결과물 유형: ${item.label}`}
     >
       <img alt="" className="shrink-0 size-[80px] object-contain" src={item.icon} />
-      <span className="font-ko-brand font-bold text-moaft-64 leading-moaft-80 tracking-moaft-tight text-fill-primary-default whitespace-nowrap">
+      <span className="typo-ko-display-1-bold text-fill-primary-default whitespace-nowrap">
         {item.label}
       </span>
     </motion.div>
@@ -223,9 +223,9 @@ export default function Landing() {
           {/* Title + subtitle – fades and lifts out on scroll */}
           <motion.div
             style={{ opacity: copyOpacity, y: copySlideY }}
-            className="relative z-20 flex flex-col gap-moaft-gap-l items-start text-text-neutral-inverse"
+            className="relative z-20 flex flex-col gap-moaft-gap-l items-start text-fg-neutral-inverse"
           >
-            <div className="font-ko-brand font-bold text-moaft-64 leading-moaft-80 tracking-moaft-tight whitespace-nowrap">
+            <div className="typo-ko-display-1-bold whitespace-nowrap">
               <p className="mb-0">AI로 만든 결과물,</p>
               <p>만드는 법도 쉽게 기록해요</p>
             </div>
@@ -238,7 +238,7 @@ export default function Landing() {
           <motion.button
             onClick={handleStart}
             style={{ y: heroCTAY }}
-            className="relative z-20 mt-moaft-gap-xl bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-text-primary-default text-moaft-16 leading-moaft-24 tracking-moaft-normal font-ko-body font-medium cursor-pointer border-0"
+            className="relative z-20 mt-moaft-gap-xl bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0"
           >
             Moaft 시작하기
           </motion.button>
@@ -287,20 +287,20 @@ export default function Landing() {
         <section className="sticky top-[97px] h-[calc(100vh-97px)] flex flex-col items-start pt-[120px] px-[148px] pb-0 overflow-hidden">
           <div className="flex flex-col gap-moaft-gap-xxl items-start">
             <div className="flex flex-col gap-moaft-gap-s items-start">
-              <p className="font-ko-brand font-bold text-moaft-64 leading-moaft-80 tracking-moaft-tight text-text-neutral-title whitespace-nowrap">
+              <p className="typo-ko-display-1-bold text-fg-neutral-title whitespace-nowrap">
                 결과는 남았는데,
               </p>
               <div className="flex gap-moaft-gap-l items-center">
-                <p className="font-ko-brand font-bold text-moaft-64 leading-moaft-80 tracking-moaft-tight text-text-neutral-title whitespace-nowrap">
+                <p className="typo-ko-display-1-bold text-fg-neutral-title whitespace-nowrap">
                   어떻게
                 </p>
                 <ProblemCycler />
-                <p className="font-ko-brand font-bold text-moaft-64 leading-moaft-80 tracking-moaft-tight text-text-neutral-title whitespace-nowrap">
+                <p className="typo-ko-display-1-bold text-fg-neutral-title whitespace-nowrap">
                   만들었는지는 사라집니다
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-moaft-gap-s items-start font-ko-brand font-moaft-regular text-moaft-20 leading-moaft-28 tracking-moaft-normal text-text-neutral-description whitespace-nowrap">
+            <div className="flex flex-col gap-moaft-gap-s items-start font-ko-brand font-moaft-regular text-moaft-20 leading-moaft-28 tracking-moaft-normal text-fg-neutral-title whitespace-nowrap">
               <motion.p style={{ opacity: l1Opacity, y: l1Y }}>
                 AI 대화가 길어질수록 최종 프롬프트를 다시 찾기 어렵고,
               </motion.p>
@@ -327,10 +327,10 @@ export default function Landing() {
         <div className="sticky top-[97px] h-[calc(100vh-97px)] flex items-center justify-center gap-moaft-gap-xxl overflow-hidden">
           {/* feature-head (left, 459px) */}
           <div className="flex flex-col items-start w-[459px] flex-shrink-0" style={{ gap: '21px' }}>
-            <p className="font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-fill-primary-default w-full">01</p>
-            <p className="font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-text-neutral-title w-full">제작 과정 기록하기</p>
+            <p className="typo-ko-display-2-bold text-fill-primary-default w-full">01</p>
+            <p className="typo-ko-display-2-bold text-fg-neutral-title w-full">제작 과정 기록하기</p>
             <div className="flex flex-col gap-moaft-gap-s items-start w-full">
-              <p className="font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal text-text-primary-default w-full">여러 단계로 이어진 작업을</p>
+              <p className="typo-ko-title-2-semibold text-fg-primary-default w-full">여러 단계로 이어진 작업을</p>
               <div className="flex gap-[4px] items-center">
                 <div className="relative flex items-center justify-center overflow-hidden">
                   <motion.div
@@ -338,14 +338,14 @@ export default function Landing() {
                     style={{ scaleX: f01HighlightScale }}
                   />
                   <motion.p
-                    className="relative font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal whitespace-nowrap"
+                    className="relative typo-ko-title-2-semibold whitespace-nowrap"
                     style={{ color: f01TextColor }}
                   >하나의 제작 과정</motion.p>
                 </div>
-                <p className="font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal text-text-primary-default whitespace-nowrap">으로 남기세요</p>
+                <p className="typo-ko-title-2-semibold text-fg-primary-default whitespace-nowrap">으로 남기세요</p>
               </div>
             </div>
-            <div className="font-ko-body font-moaft-regular text-moaft-16 leading-moaft-24 tracking-moaft-normal text-text-neutral-description w-full">
+            <div className="typo-ko-label-1-regular text-fg-neutral-description w-full">
               <p className="mb-0">사용한 도구와 프롬프트, 입력 자료, 결과물을</p>
               <p className="mb-0">작업 순서대로 연결해 기록해요.</p>
               <p className="mb-0">여러 AI 도구를 오간 작업도 처음부터 완성까지</p>
@@ -388,10 +388,10 @@ export default function Landing() {
 
           {/* feature-head (right, 459px) */}
           <div className="flex flex-col items-start w-[459px] flex-shrink-0" style={{ gap: '21px' }}>
-            <p className="font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-fill-primary-default w-full">02</p>
-            <p className="font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-text-neutral-title w-full">변화 과정 기록하기</p>
+            <p className="typo-ko-display-2-bold text-fg-primary-default w-full">02</p>
+            <p className="typo-ko-display-2-bold text-fg-neutral-title w-full">변화 과정 기록하기</p>
             <div className="flex flex-col gap-moaft-gap-s items-start w-full">
-              <p className="font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal text-text-primary-default w-full">결과가 어떻게 달라졌는지</p>
+              <p className="typo-ko-title-2-semibold text-fg-primary-default w-full">결과가 어떻게 달라졌는지</p>
               <div className="flex gap-[4px] items-center">
                 <div className="relative flex items-center justify-center overflow-hidden">
                   <motion.div
@@ -399,14 +399,14 @@ export default function Landing() {
                     style={{ scaleX: f02HighlightScale }}
                   />
                   <motion.p
-                    className="relative font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal whitespace-nowrap"
+                    className="relative typo-ko-title-2-semibold whitespace-nowrap"
                     style={{ color: f02TextColor }}
                   >변화의 흐름</motion.p>
                 </div>
-                <p className="font-ko-brand font-moaft-semi-bold text-moaft-28 leading-moaft-38 tracking-moaft-normal text-text-primary-default whitespace-nowrap">을 남기세요</p>
+                <p className="typo-ko-title-2-semibold text-fg-primary-default whitespace-nowrap">을 남기세요</p>
               </div>
             </div>
-            <div className="font-ko-body font-moaft-regular text-moaft-16 leading-moaft-24 tracking-moaft-normal text-text-neutral-description w-full">
+            <div className="typo-ko-label-1-regular text-fg-neutral-description w-full">
               <p className="mb-0">프롬프트를 수정할 때마다 결과물이 어떻게 달라졌는지</p>
               <p className="mb-0">연결해 기록해요.</p>
               <p className="mb-0">최종 결과만 봐서는 알 수 없는 수정 과정과 선택 이유를</p>
@@ -428,7 +428,7 @@ export default function Landing() {
         >
           {/* how-heading */}
           <div className="flex flex-col items-center text-center" style={{ gap: '14px' }}>
-            <p className="font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-text-neutral-title">HOW?</p>
+            <p className="typo-ko-display-2-bold text-fg-neutral-title">HOW?</p>
             <div className="flex items-center gap-[4px]">
               <div className="relative flex items-center justify-center overflow-hidden">
                 <motion.div
@@ -436,13 +436,13 @@ export default function Landing() {
                   style={{ scaleX: howHighlightScale }}
                 />
                 <motion.p
-                  className="relative font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight whitespace-nowrap"
+                  className="relative typo-ko-display-2-bold whitespace-nowrap"
                   style={{ color: howTextColor }}
                 >편한 방법</motion.p>
               </div>
-              <p className="font-ko-brand font-bold text-moaft-48 leading-moaft-60 tracking-moaft-tight text-text-primary-default whitespace-nowrap">으로 기록을 시작하세요</p>
+              <p className="typo-ko-display-2-bold text-fg-primary-default whitespace-nowrap">으로 기록을 시작하세요</p>
             </div>
-            <div className="font-ko-brand font-moaft-regular text-moaft-20 leading-moaft-28 tracking-moaft-normal text-text-neutral-title text-center">
+            <div className="font-ko-brand font-moaft-regular text-moaft-20 leading-moaft-28 tracking-moaft-normal text-fg-neutral-title text-center">
               <p className="mb-0">이미 나눈 AI 대화는 공유 링크나 캡처 이미지로 가져오고, 새로운 작업은 직접 작성할 수 있어요.</p>
               <p className="flex items-center justify-center gap-[4px] flex-wrap">
                 <MoaftWordmark height={18} />
@@ -481,7 +481,7 @@ export default function Landing() {
             >
               <div className="bg-white/90 backdrop-blur-[50px] flex flex-col gap-moaft-gap-m items-center px-[48px] pt-[48px] pb-[40px] rounded-[12px] w-[343px]">
                 <AnalysisGauge progress={gaugeProgress} />
-                <div className="flex items-end font-ko-brand font-moaft-regular text-moaft-16 leading-moaft-24 tracking-moaft-normal text-text-neutral-description">
+                <div className="flex items-end typo-ko-label-1-regular text-fg-neutral-description">
                   <span>AI 분석 중</span>
                   <span className="inline-flex items-end gap-[1px] ml-[4px]">
                   {[0, 1, 2].map((i) => (
@@ -514,8 +514,8 @@ export default function Landing() {
       {/* ⑦ CTA section */}
       <section className="relative flex flex-col gap-moaft-gap-xxl items-start px-[148px] py-[240px] w-full">
         <div className="absolute inset-0 bg-fill-primary-default" />
-        <div className="relative flex flex-col gap-moaft-gap-l items-start text-text-neutral-inverse whitespace-nowrap">
-          <p className="font-ko-brand font-bold text-moaft-64 leading-moaft-80 tracking-moaft-tight">
+        <div className="relative flex flex-col gap-moaft-gap-l items-start text-fg-neutral-inverse whitespace-nowrap">
+          <p className="typo-ko-display-1-bold">
             만든 과정을 남기고,
             <br />
             다음 아이디어를 발견하세요
@@ -527,13 +527,13 @@ export default function Landing() {
         <div className="relative flex gap-moaft-gap-l items-start">
           <button
             onClick={handleStart}
-            className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-text-primary-default text-moaft-16 leading-moaft-24 tracking-moaft-normal font-ko-body font-medium cursor-pointer border-0 hover:opacity-90 active:opacity-80"
+            className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0 hover:opacity-90 active:opacity-80"
           >
             기록 구경하기
           </button>
           <button
             onClick={handleStart}
-            className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-text-primary-default text-moaft-16 leading-moaft-24 tracking-moaft-normal font-ko-body font-medium cursor-pointer border-0 hover:opacity-90 active:opacity-80"
+            className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0 hover:opacity-90 active:opacity-80"
           >
             내 기록 만들기
           </button>
