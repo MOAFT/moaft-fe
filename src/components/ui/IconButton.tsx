@@ -1,3 +1,4 @@
+
 import type { ReactNode } from "react";
 
 type IconButtonProps = {
@@ -6,28 +7,31 @@ type IconButtonProps = {
   ariaLabel: string; // 아이콘만으로 버튼의 목적을 알 수 있도록 설명을 전달
   onClick?: () => void; // 버튼을 클릭했을 때 실행할 함수
   disabled?: boolean; // true이면 버튼을 조작할 수 없음
-  iconSize?: 24 | 28; // 아이콘 크기
+  size?: "L" | "S"; // 버튼 크기 (L: 아이콘 24px, S: 아이콘 20px)
 };
 
 export default function IconButton({
-  icon, 
-  variant = "default", 
-  ariaLabel, 
+  icon,
+  variant = "default",
+  ariaLabel,
   onClick,
   disabled = false,
-  iconSize = 24, 
+  size = "L",
 }: IconButtonProps) {
 
   const iconSizeClass =
-    iconSize === 28
-      ? "[&_svg]:h-7 [&_svg]:w-7 [&_img]:h-7 [&_img]:w-7"
+    size === "S"
+      ? "[&_svg]:h-5 [&_svg]:w-5 [&_img]:h-5 [&_img]:w-5"
       : "[&_svg]:h-6 [&_svg]:w-6 [&_img]:h-6 [&_img]:w-6";
+
+  // S/L 모두 터치 영역은 44x44px로 고정
+  const buttonSizeClass = "h-[44px] w-[44px]";
 
   return (
     <div>
       <button
         type="button"
-        className={`inline-flex h-[44px] w-[44px] items-center justify-center rounded-moaft-full border-0 p-0 text-common-black ${
+        className={`inline-flex ${buttonSizeClass} items-center justify-center rounded-moaft-full border-0 p-0 text-common-black ${
           variant === "fill" ? "bg-gray-700" : "bg-transparent"
         }`}
         aria-label={ariaLabel}
@@ -36,7 +40,9 @@ export default function IconButton({
       >
         <span
           className={`${iconSizeClass} ${
-            variant === "fill" ? "[&_img]:brightness-0 [&_img]:invert" : ""
+            variant === "fill"
+              ? "[&_img]:brightness-0 [&_img]:invert [&_svg]:brightness-0 [&_svg]:invert"
+              : ""
           }`}
         >
           {icon}
