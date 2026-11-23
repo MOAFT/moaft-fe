@@ -24,10 +24,8 @@ export default function IconButton({
       ? "[&_svg]:h-5 [&_svg]:w-5 [&_img]:h-5 [&_img]:w-5"
       : "[&_svg]:h-6 [&_svg]:w-6 [&_img]:h-6 [&_img]:w-6";
 
-  const buttonSizeClass =
-    size === "S"
-      ? "h-[32px] w-[32px]"
-      : "h-[44px] w-[44px]";
+  // S/L 모두 터치 영역은 44x44px로 고정
+  const buttonSizeClass = "h-[44px] w-[44px]";
 
   return (
     <div>
