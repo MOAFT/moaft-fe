@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, useMotionValueEvent, type MotionValue } from 'framer-motion';
 import heroLogo from '../../assets/landing/hero-logo.svg';
 import problemVisual from '../../assets/landing/problem-visual.png';
@@ -114,8 +113,6 @@ function ProblemCycler() {
 
 
 export default function Landing() {
-  const navigate = useNavigate();
-
   // ⑤ Hero scroll – sticky
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroProgress } = useScroll({
@@ -125,16 +122,24 @@ export default function Landing() {
   const copyOpacity  = useTransform(heroProgress, [0, 0.28], [1, 0]);
   const copySlideY   = useTransform(heroProgress, [0, 0.28], [0, -24]);
 
+  const [windowHeight, setWindowHeight] = useState(() =>
+    typeof window !== 'undefined' ? window.innerHeight : 0
+  );
+  useEffect(() => {
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // 뷰포트 기준 비주얼 중앙 이동량 + CTA가 로고 아래에 오는 드리프트 계산
   const { heroVisualTarget, heroCTATargetY } = useMemo(() => {
-    if (typeof window === 'undefined') return { heroVisualTarget: -287, heroCTATargetY: 120 };
-    const vh = window.innerHeight;
-    const vt = -Math.round((vh - 97 - 229) / 2);
+    if (!windowHeight) return { heroVisualTarget: -287, heroCTATargetY: 120 };
+    const vt = -Math.round((windowHeight - 97 - 229) / 2);
     // 로고 bottom_final = (vh + 276) / 2, 버튼 top_initial ≈ 456px (헤더는 별도 컴포넌트)
     // 타겟: 버튼 top_final = 로고 bottom_final + 48
-    const cta = Math.max(0, Math.round(vh / 2 - 270));
+    const cta = Math.max(0, Math.round(windowHeight / 2 - 270));
     return { heroVisualTarget: vt, heroCTATargetY: cta };
-  }, []);
+  }, [windowHeight]);
 
   const heroVisualY  = useTransform(heroProgress, [0.05, 0.55], [-50, heroVisualTarget]);
   const heroCTAY     = useTransform(heroProgress, [0.05, 0.55], [0, heroCTATargetY]);
@@ -203,8 +208,6 @@ export default function Landing() {
   // Result fades in after gauge completes (86–95%)
   const resultOpacity   = useTransform(howProgress, [0.86, 0.95], [0, 1]);
 
-  const handleStart = () => navigate('/login');
-
   return (
     <div className="bg-white flex flex-col items-start w-full">
 
@@ -237,7 +240,7 @@ export default function Landing() {
 
           {/* CTA – drifts down to below hero-visual */}
           <motion.div style={{ y: heroCTAY }} className="relative z-20 mt-moaft-gap-xl">
-            <ActionButton label="Moaft 시작하기" variant="secondary" onClick={handleStart} />
+            <ActionButton label="Moaft 시작하기" variant="secondary" href="/login" />
           </motion.div>
 
           {/* hero-visual – 초기 위치: 뷰포트 하단, 스크롤 시 중앙으로 이동 */}
@@ -318,12 +321,11 @@ export default function Landing() {
       {/* ② Feature 01 – sticky: 제작 과정 기록하기 */}
       <div
         ref={feature01Ref}
-        className="relative w-full"
-        style={{ height: 'calc(100vh - 97px + 1000px)' }}
+        className="relative w-full xl:h-[calc(100vh_-_97px_+_1000px)]"
       >
-        <div className="sticky top-[97px] h-[calc(100vh-97px)] flex items-center justify-center gap-moaft-gap-xxl overflow-hidden">
+        <div className="static xl:sticky xl:top-[97px] xl:h-[calc(100vh-97px)] flex flex-col xl:flex-row items-center justify-center gap-moaft-gap-xxl overflow-visible xl:overflow-hidden px-5 xl:px-0 py-16 xl:py-0">
           {/* feature-head (left, 459px) */}
-          <div className="flex flex-col items-start w-[459px] flex-shrink-0" style={{ gap: '21px' }}>
+          <div className="flex flex-col items-start w-full xl:w-[459px] xl:flex-shrink-0" style={{ gap: '21px' }}>
             <p className="typo-ko-display-2-bold text-fill-primary-default w-full">01</p>
             <p className="typo-ko-display-2-bold text-fg-neutral-title w-full">제작 과정 기록하기</p>
             <div className="flex flex-col gap-moaft-gap-s items-start w-full">
@@ -351,12 +353,12 @@ export default function Landing() {
           </div>
 
           {/* feature-01-visual (right, placeholder) */}
-          <div className="w-[625px] h-[559px] flex-shrink-0 rounded-[12px] overflow-hidden">
+          <div className="w-full xl:w-[625px] h-auto xl:h-[559px] xl:flex-shrink-0 rounded-[12px] overflow-hidden">
             <motion.div style={{ y: feature01Y }}>
               <img
                 src={problemVisual}
                 alt=""
-                className="w-[625px] pointer-events-none"
+                className="w-full xl:w-[625px] pointer-events-none"
                 style={{ objectFit: 'cover' }}
               />
             </motion.div>
@@ -367,24 +369,23 @@ export default function Landing() {
       {/* ③ Feature 02 – sticky: 변화 과정 기록하기 */}
       <div
         ref={feature02Ref}
-        className="relative w-full"
-        style={{ height: 'calc(100vh - 97px + 900px)' }}
+        className="relative w-full xl:h-[calc(100vh_-_97px_+_900px)]"
       >
-        <div className="sticky top-[97px] h-[calc(100vh-97px)] flex items-center justify-center gap-moaft-gap-xxl overflow-hidden">
+        <div className="static xl:sticky xl:top-[97px] xl:h-[calc(100vh-97px)] flex flex-col xl:flex-row items-center justify-center gap-moaft-gap-xxl overflow-visible xl:overflow-hidden px-5 xl:px-0 py-16 xl:py-0">
           {/* feature-02-visual (left, placeholder) */}
-          <div className="w-[625px] h-[559px] flex-shrink-0 rounded-[12px] overflow-hidden">
+          <div className="w-full xl:w-[625px] h-auto xl:h-[559px] xl:flex-shrink-0 rounded-[12px] overflow-hidden">
             <motion.div style={{ y: feature02Y }}>
               <img
                 src={problemVisual}
                 alt=""
-                className="w-[625px] pointer-events-none"
+                className="w-full xl:w-[625px] pointer-events-none"
                 style={{ objectFit: 'cover' }}
               />
             </motion.div>
           </div>
 
           {/* feature-head (right, 459px) */}
-          <div className="flex flex-col items-start w-[459px] flex-shrink-0" style={{ gap: '21px' }}>
+          <div className="flex flex-col items-start w-full xl:w-[459px] xl:flex-shrink-0" style={{ gap: '21px' }}>
             <p className="typo-ko-display-2-bold text-fg-primary-default w-full">02</p>
             <p className="typo-ko-display-2-bold text-fg-neutral-title w-full">변화 과정 기록하기</p>
             <div className="flex flex-col gap-moaft-gap-s items-start w-full">
@@ -449,7 +450,7 @@ export default function Landing() {
           </div>
 
           {/* how-graphics */}
-          <div className="relative w-[780px] h-[500px] flex-shrink-0">
+          <div className="relative w-[780px] max-w-full h-[500px] flex-shrink-0 overflow-hidden">
             <motion.div
               style={{ left: g1Left, top: g1Top, opacity: boxesOpacity }}
               className="absolute size-[210px]"
@@ -505,13 +506,13 @@ export default function Landing() {
 
       {/* ⑥ Result section – 완성본 전체 이미지 (전체 페이지 스크롤) */}
       <section className="relative w-full flex flex-col items-center py-[80px]">
-        <img src={problemVisual} alt="완성본 예시" className="w-[780px] rounded-[12px]" />
+        <img src={problemVisual} alt="완성본 예시" className="w-full max-w-[780px] rounded-[12px]" />
       </section>
 
       {/* ⑦ CTA section */}
-      <section className="relative flex flex-col gap-moaft-gap-xxl items-start px-[148px] py-[240px] w-full">
+      <section className="relative flex flex-col gap-moaft-gap-xxl items-start px-5 md:px-[148px] py-[240px] w-full">
         <div className="absolute inset-0 bg-fill-primary-default" />
-        <div className="relative flex flex-col gap-moaft-gap-l items-start text-fg-neutral-inverse whitespace-nowrap">
+        <div className="relative flex flex-col gap-moaft-gap-l items-start text-fg-neutral-inverse md:whitespace-nowrap">
           <p className="typo-ko-display-1-bold">
             만든 과정을 남기고,
             <br />
@@ -522,8 +523,8 @@ export default function Landing() {
           </p>
         </div>
         <div className="relative flex gap-moaft-gap-l items-start">
-          <ActionButton label="기록 구경하기" variant="secondary" onClick={handleStart} />
-          <ActionButton label="내 기록 만들기" variant="secondary" onClick={handleStart} />
+          <ActionButton label="기록 구경하기" variant="secondary" href="/login" />
+          <ActionButton label="내 기록 만들기" variant="secondary" href="/login" />
         </div>
       </section>
     </div>

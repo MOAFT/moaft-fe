@@ -106,7 +106,7 @@ export default function FAQPage() {
       <LandingHeader activeTab="faq" />
 
       <main className="w-full pt-[97px]">
-        <div className="px-[148px]">
+        <div className="px-5 md:px-[148px]">
           <div className="pt-[60px] pb-[60px] flex flex-col gap-[20px]">
             <p className="typo-ko-display-2-bold text-fg-neutral-title">자주 묻는 질문</p>
             <p className="font-ko-brand font-moaft-regular text-moaft-20 leading-moaft-28 tracking-moaft-normal text-fg-neutral-description">
@@ -114,7 +114,7 @@ export default function FAQPage() {
             </p>
           </div>
 
-          <div className="w-[871px] border-t border-border-neutral-default pb-[120px]">
+          <div className="w-full max-w-[871px] border-t border-border-neutral-default pb-[120px]">
             {FAQ_ITEMS.map((item, idx) => (
               <FaqAccordionItem
                 key={item.number}

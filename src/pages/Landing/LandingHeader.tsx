@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import headerLogo from '../../assets/landing/header-logo.svg';
 import NavItemBrand from '../../components/layout/_NavItemBrand';
 import ActionButton from '../../components/ui/ActionButton';
@@ -16,17 +16,18 @@ export default function LandingHeader({ activeTab }: { activeTab: LandingTab }) 
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-fill-primary-default flex items-center justify-between min-h-[97px] px-[32px] py-[4px]">
-      <div
-        className="relative overflow-hidden size-[89px] shrink-0 cursor-pointer"
-        onClick={() => navigate('/')}
+      <Link
+        to="/"
+        className="relative overflow-hidden size-[89px] shrink-0 rounded-sm focus-visible:ring-2 focus-visible:ring-fg-neutral-title focus-visible:outline-none"
+        aria-label="Moaft 홈으로 이동"
       >
         <img
           src={headerLogo}
-          alt="Moaft"
+          alt=""
           className="absolute block"
           style={{ width: 82.047, height: 23.787, left: 3.65, top: 32.68 }}
         />
-      </div>
+      </Link>
       <nav className="flex gap-moaft-gap-s items-center">
         {NAV_ITEMS.map(({ label, tab, path }) => (
           <NavItemBrand

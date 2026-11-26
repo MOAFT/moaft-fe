@@ -11,7 +11,7 @@ import FAQPage from "./pages/Landing/FAQPage";
 function PlaceholderPage({ title }: { title: string }) {
   return (
     <main>
-      <h1>{title}</h1>그
+      <h1>{title}</h1>
       <p>라우팅 확인용 임시 화면입니다.</p>
     </main>
   );
