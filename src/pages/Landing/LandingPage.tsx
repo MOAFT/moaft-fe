@@ -11,6 +11,7 @@ import cyclerVideoIcon from '../../assets/landing/cycler-video.png';
 import cyclerDocumentIcon from '../../assets/landing/cycler-document.png';
 import cyclerCodeIcon from '../../assets/landing/cycler-project.png';
 import LandingHeader from './LandingHeader';
+import ActionButton from '../../components/ui/ActionButton';
 
 function MoaftWordmark({ height = 18 }: { height?: number }) {
   const viewW = 82.0469;
@@ -196,11 +197,11 @@ export default function Landing() {
   // Phase 2 (45–60%): icons fade out as gauge appears
   const boxesOpacity    = useTransform(howProgress, [0.45, 0.60], [1, 0]);
   // Analysis modal: fade in (45–55%), hold, fade out AFTER gauge completes (78–86%)
-  const analysisOpacity = useTransform(howProgress, [0.45, 0.55, 0.78, 0.86], [0, 1, 1, 0]);
-  // Gauge fills 0→100 (50%→78%)
-  const gaugeProgress   = useTransform(howProgress, [0.50, 0.78], [0, 100]);
-  // Result fades in after gauge completes (78–90%) — still used for opacity
-  const resultOpacity   = useTransform(howProgress, [0.78, 0.90], [0, 1]);
+  const analysisOpacity = useTransform(howProgress, [0.45, 0.55, 0.86, 0.92], [0, 1, 1, 0]);
+  // Gauge fills 0→100 (50%→86%)
+  const gaugeProgress   = useTransform(howProgress, [0.50, 0.86], [0, 100]);
+  // Result fades in after gauge completes (86–95%)
+  const resultOpacity   = useTransform(howProgress, [0.86, 0.95], [0, 1]);
 
   const handleStart = () => navigate('/login');
 
@@ -235,13 +236,9 @@ export default function Landing() {
           </motion.div>
 
           {/* CTA – drifts down to below hero-visual */}
-          <motion.button
-            onClick={handleStart}
-            style={{ y: heroCTAY }}
-            className="relative z-20 mt-moaft-gap-xl bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0"
-          >
-            Moaft 시작하기
-          </motion.button>
+          <motion.div style={{ y: heroCTAY }} className="relative z-20 mt-moaft-gap-xl">
+            <ActionButton label="Moaft 시작하기" variant="secondary" onClick={handleStart} />
+          </motion.div>
 
           {/* hero-visual – 초기 위치: 뷰포트 하단, 스크롤 시 중앙으로 이동 */}
           <motion.div
@@ -345,12 +342,12 @@ export default function Landing() {
                 <p className="typo-ko-title-2-semibold text-fg-primary-default whitespace-nowrap">으로 남기세요</p>
               </div>
             </div>
-            <div className="typo-ko-label-1-regular text-fg-neutral-description w-full">
-              <p className="mb-0">사용한 도구와 프롬프트, 입력 자료, 결과물을</p>
-              <p className="mb-0">작업 순서대로 연결해 기록해요.</p>
-              <p className="mb-0">여러 AI 도구를 오간 작업도 처음부터 완성까지</p>
-              <p>한눈에 확인할 수 있어요.</p>
-            </div>
+            <p className="typo-ko-body-regular text-fg-neutral-description w-full">
+              사용한 도구와 프롬프트, 입력 자료, 결과물을<br />
+              작업 순서대로 연결해 기록해요.<br />
+              여러 AI 도구를 오간 작업도 처음부터 완성까지<br />
+              한눈에 확인할 수 있어요.
+            </p>
           </div>
 
           {/* feature-01-visual (right, placeholder) */}
@@ -406,12 +403,12 @@ export default function Landing() {
                 <p className="typo-ko-title-2-semibold text-fg-primary-default whitespace-nowrap">을 남기세요</p>
               </div>
             </div>
-            <div className="typo-ko-label-1-regular text-fg-neutral-description w-full">
-              <p className="mb-0">프롬프트를 수정할 때마다 결과물이 어떻게 달라졌는지</p>
-              <p className="mb-0">연결해 기록해요.</p>
-              <p className="mb-0">최종 결과만 봐서는 알 수 없는 수정 과정과 선택 이유를</p>
-              <p>다시 확인할 수 있어요.</p>
-            </div>
+            <p className="typo-ko-body-regular text-fg-neutral-description w-full">
+              프롬프트를 수정할 때마다 결과물이 어떻게 달라졌는지<br />
+              연결해 기록해요.<br />
+              최종 결과만 봐서는 알 수 없는 수정 과정과 선택 이유를<br />
+              다시 확인할 수 있어요.
+            </p>
           </div>
         </div>
       </div>
@@ -481,7 +478,7 @@ export default function Landing() {
             >
               <div className="bg-white/90 backdrop-blur-[50px] flex flex-col gap-moaft-gap-m items-center px-[48px] pt-[48px] pb-[40px] rounded-[12px] w-[343px]">
                 <AnalysisGauge progress={gaugeProgress} />
-                <div className="flex items-end typo-ko-label-1-regular text-fg-neutral-description">
+                <div className="flex items-end typo-ko-body-regular text-fg-neutral-description">
                   <span>AI 분석 중</span>
                   <span className="inline-flex items-end gap-[1px] ml-[4px]">
                   {[0, 1, 2].map((i) => (
@@ -525,18 +522,8 @@ export default function Landing() {
           </p>
         </div>
         <div className="relative flex gap-moaft-gap-l items-start">
-          <button
-            onClick={handleStart}
-            className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0 hover:opacity-90 active:opacity-80"
-          >
-            기록 구경하기
-          </button>
-          <button
-            onClick={handleStart}
-            className="bg-fill-primary-assistive flex items-center justify-center h-[48px] min-w-[76px] px-moaft-padding-xl py-moaft-padding-m rounded-moaft-s text-fg-primary-default typo-ko-label-1-medium cursor-pointer border-0 hover:opacity-90 active:opacity-80"
-          >
-            내 기록 만들기
-          </button>
+          <ActionButton label="기록 구경하기" variant="secondary" onClick={handleStart} />
+          <ActionButton label="내 기록 만들기" variant="secondary" onClick={handleStart} />
         </div>
       </section>
     </div>
