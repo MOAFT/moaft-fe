@@ -58,6 +58,10 @@
   @apply font-ko-brand text-moaft-20 font-moaft-semi-bold leading-moaft-28 tracking-moaft-normal;
 }
 
+@utility typo-ko-heading-2-regular {
+  @apply font-ko-brand text-moaft-20 font-moaft-regular leading-moaft-28 tracking-moaft-normal;
+}
+
 /* Headline */
 @utility typo-ko-headline-semibold {
   @apply font-ko-body text-moaft-18 font-moaft-semi-bold leading-moaft-26 tracking-moaft-normal;
@@ -177,6 +181,11 @@
 
 @utility typo-eng-heading-2-semibold {
   @apply font-eng-brand text-moaft-20 font-moaft-semi-bold leading-moaft-28 tracking-moaft-tight;
+  font-variation-settings: "opsz" 14, "wdth" 100;
+}
+
+@utility typo-eng-heading-2-regular {
+  @apply font-eng-brand text-moaft-20 font-moaft-regular leading-moaft-28 tracking-moaft-tight;
   font-variation-settings: "opsz" 14, "wdth" 100;
 }
 
