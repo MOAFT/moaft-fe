@@ -163,7 +163,7 @@ export default function PromptCard({
               />
             )}
 
-            <div className="relative z-10 flex h-8 w-full flex-col items-end overflow-hidden">
+            <div className="relative z-10 flex min-h-[44px] w-full items-end justify-end">
               <TextButton
                 label={isCollapsed ? "전체보기" : "접기"}
                 underline={false}

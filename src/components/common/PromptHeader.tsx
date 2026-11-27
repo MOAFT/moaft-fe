@@ -90,7 +90,7 @@ export default function PromptHeader({
               </span>
             </div>
 
-            <p className="typo-ko-heading-1-semibold whitespace-nowrap text-fg-neutral-title">
+            <p className="min-w-0 flex-1 whitespace-normal break-words typo-ko-heading-1-semibold text-fg-neutral-title">
               {titleValue}
             </p>
           </div>
