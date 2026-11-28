@@ -4,6 +4,9 @@ import {
   Routes,
   useSearchParams,
 } from "react-router-dom";
+import LandingPage from "./pages/Landing/LandingPage";
+import DiscoverPage from "./pages/Landing/DiscoverPage";
+import FAQPage from "./pages/Landing/FAQPage";
 
 function PlaceholderPage({ title }: { title: string }) {
   return (
@@ -28,10 +31,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PlaceholderPage title="랜딩페이지" />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<PlaceholderPage title="로그인" />} />
         <Route path="/signup" element={<PlaceholderPage title="회원가입" />} />
         <Route path="/home" element={<PlaceholderPage title="홈" />} />
+
+        <Route path="/discover" element={<DiscoverPage />} />
+        <Route path="/faq" element={<FAQPage />} />
 
         <Route path="/library" element={<LibraryPlaceholder />} />
         <Route path="/explore" element={<PlaceholderPage title="탐색" />} />

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 type ActionButtonProps = {
   label: string; // 버튼에 표시할 문구
@@ -6,6 +7,7 @@ type ActionButtonProps = {
   size?: "S" | "M" | "L"; // 버튼 크기. 기본값은 M
   trailingIcon?: ReactNode; // 문구 오른쪽에 표시할 아이콘
   fullWidth?: boolean;
+  href?: string; // 제공되면 <button> 대신 <Link>로 렌더링
   disabled?: boolean; // true이면 버튼을 조작할 수 없음
   onClick?: () => void; // 버튼을 클릭했을 때 실행할 함수
 };
@@ -16,6 +18,7 @@ export default function ActionButton({
   size = "M",
   trailingIcon,
   fullWidth = false,
+  href,
   disabled = false,
   onClick,
 }: ActionButtonProps) {
@@ -44,20 +47,34 @@ const interactionClasses =
       ? "disabled:text-fg-neutral-weak"
       : "disabled:text-fg-primary-weak";
 
-  return (
-    <button
-      className={`inline-flex ${fullWidth ? "w-full" : "w-fit"} items-center justify-center gap-moaft-gap-xs rounded-moaft-s border-0 whitespace-nowrap ${sizeClasses} ${variantClasses} ${interactionClasses} ${disabledTextClass} disabled:shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)] disabled:cursor-not-allowed`}
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-    >
+  const sharedClassName = `inline-flex ${fullWidth ? "w-full" : "w-fit"} items-center justify-center gap-moaft-gap-xs rounded-moaft-s border-0 whitespace-nowrap ${sizeClasses} ${variantClasses} ${interactionClasses}`;
+  const content = (
+    <>
       <span>{label}</span>
-
       {trailingIcon && (
         <span className={iconSizeClass} aria-hidden="true">
           {trailingIcon}
         </span>
       )}
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link to={href} className={sharedClassName}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      className={`${sharedClassName} ${disabledTextClass} disabled:shadow-[inset_0_0_0_9999px_var(--color-fill-state-disabled)] disabled:cursor-not-allowed`}
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {content}
     </button>
   );
 }
