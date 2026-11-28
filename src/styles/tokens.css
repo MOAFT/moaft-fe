@@ -16,8 +16,8 @@
   --color-purple-900: #2A2060;
 
   /* Gray */
-  --color-gray-50: #F4F4F8;
-  --color-gray-100: #EAEAF1;
+  --color-gray-50: #F4F6FA;
+  --color-gray-100: #EDEDF1;
   --color-gray-200: #E1E1E9;
   --color-gray-300: #C8C6D1;
   --color-gray-400: #A1A3AB;
@@ -103,7 +103,8 @@
   --color-fg-system-default: var(--color-red-400);
 
   /* Border */
-  --color-border-primary-default: var(--color-purple-300);
+  --color-border-primary-weak: var(--color-purple-200);
+  --color-border-primary-default: var(--color-purple-400);
   --color-border-neutral-default: var(--color-gray-200);
   --color-border-neutral-weak: var(--color-gray-100);
   --color-border-system-error: var(--color-red-400);
